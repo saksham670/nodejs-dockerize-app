@@ -6,17 +6,16 @@ pipeline {
                 checkout scm
             }
         }
-
         stage("Test") {
             steps {
-                sh 'sudo npm install'
+                bat 'sudo npm install'
             }
         }
-
         stage('build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
+    
     }
 }
